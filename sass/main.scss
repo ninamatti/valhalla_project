@@ -4,7 +4,8 @@ $color-primary-light: #F8EDD2;
 $color-primary-dark: #DCC696;
 
 $color-gray-dark: #777;
-
+$color-white: #fff;
+$color-black: #000;
 
 *,
 *::after,
@@ -34,7 +35,7 @@ body {
     background-image: 
         linear-gradient(
             to right bottom,
-            rgba(255, 251, 241, 0.1),
+            rgba($color-white, 0.1),
             rgba($color-primary-light, 0.6)), 
         url(../img/hero_valhalla_big.jpg);
     background-size: cover;
@@ -42,29 +43,30 @@ body {
     position: relative;
 
     clip-path: polygon(0 0, 100% 0, 100% 80vh, 80% 100%, 20% 100%, 0 80vh);
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 5rem;
+        border-radius: 50%;
+    }
+
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
 }
 
-.header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
-}
-
-.header__logo {
-    height: 4.5rem;
-}
-
-.header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-
-}
 
 .heading-primary {
-    color: #fff;
+    color: $color-white;
     text-transform: uppercase;
 
     backface-visibility: hidden;
@@ -142,12 +144,12 @@ body {
 
 .btn:hover {
     transform: translateY(-.3rem);
-    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+    box-shadow: 0 1rem 2rem rgba($color-black,.2);
 }
 
 .btn:active {
     transform: translateY(-.1rem);
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+    box-shadow: 0 .5rem 1rem rgba($color-black,.2);
 }
 
 .btn::after {
@@ -169,12 +171,12 @@ body {
 }
 
 .btn--white {
-    background-color: #fff;
+    background-color:$color-white;
     color:$color-gray-dark;
 }
 
 .btn--white::after {
-    background-color: #fff;
+    background-color:$color-white;
 }
 
 
